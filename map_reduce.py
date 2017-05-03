@@ -9,4 +9,9 @@ def freq(word1):
 def freqGroup(group):
     return str(reduce(lambda a,b: a + b, [freq(word) for word in group]))
 
+def mostFreq():
+    dic={word:freq(word) for word in book}
+    return reduce(lambda a,b: a if dic[a] > dic[b] else b, dic.keys())
+
 print freq("Chapter")
+print mostFreq()
